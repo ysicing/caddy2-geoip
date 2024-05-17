@@ -28,6 +28,8 @@ COPY Caddyfile /etc/caddy/Caddyfile
 
 ENV org.opencontainers.image.source = "https://github.com/ysicing/caddy2-geoip"
 
+LABEL org.opencontainers.image.description = "caddy2-geoip"
+
 EXPOSE 2024
 
 CMD caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
