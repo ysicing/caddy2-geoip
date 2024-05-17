@@ -1,6 +1,6 @@
 (LOG) {
     log {
-        output file ./caddy.log {
+        output file /var/log/caddy.log {
             roll_size 1mb
             roll_keep 5
             roll_keep_for 1h
@@ -23,15 +23,5 @@
     import COMCFG
     import LOG
     metrics /metrics
-    @geofilter {
-        geoip {
-            db_file "./Country.mmdb"
-        }
-    }
-    @geofilter {
-        respond "403 Forbidden"
-    }
-    file_server {
-        root ./docker/example/allow
-    }
+    respond "Hello, world!"
 }
